@@ -15,7 +15,7 @@ def pipeline(name, arch):
           "echo \"This is .drone.yml\"",
           "uname -m",
           "cat /etc/hosts",
-          "ruby -e \"hosts = File.read('/etc/hosts').sub(/^::1 *localhost.*$/, ''); File.write('/etc/hosts', hosts)\"",
+          "ruby -e \"hosts = File.read('/etc/hosts').sub(/^::1\s*localhost.*$/, ''); File.write('/etc/hosts', hosts)\"",
           "cat /etc/hosts"
         ]
       }
