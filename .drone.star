@@ -12,7 +12,7 @@ def pipeline(name, arch):
         "name": "test",
         "image": "ruby:2.5-stretch",
         "commands": [
-          "echo \"This is .drone.yml\"",
+          "echo \"This is .drone.star\"",
           "uname -m",
           "cat /etc/hosts",
           "ruby -e \"hosts = File.read('/etc/hosts').sub(/^::1\\\\s*localhost.*$/, ''); File.write('/etc/hosts', hosts)\"",
