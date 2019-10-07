@@ -1,0 +1,16 @@
+---
+kind: pipeline
+type: docker
+name: arm64
+platform:
+  os: linux
+  arch: arm64
+steps:
+  - name: test
+    image: ruby:2.5-stretch
+    commands:
+      - echo "This is .drone.yml"
+      - uname -m
+      - cat /etc/hosts
+      - ruby -e "hosts = File.read('/etc/hosts').sub(/^::1\s*localhost.*$/, ''); File.write('/etc/hosts', hosts)"
+      - cat /etc/hosts
