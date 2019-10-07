@@ -14,6 +14,7 @@ def pipeline(name, arch):
         "commands": [
           "uname -m",
           "echo \"/^::1 .+$/\"",
+          "echo \"hosts = File.read('/etc/hosts').sub(/^::1 .+$/, ''); File.write('/etc/hosts', hosts)\"",
           "cat /etc/hosts",
           "ruby -e \"hosts = File.read('/etc/hosts').sub(/^::1 .+$/, ''); p hosts; File.write('/etc/hosts', hosts)\"",
           "cat /etc/hosts"
