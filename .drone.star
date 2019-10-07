@@ -13,7 +13,7 @@ def pipeline(name, arch):
         "image": "ruby:2.5-stretch",
         "commands": [
           "uname -m",
-          "cat /etc/hosts"
+          "cat /etc/hosts",
           "ruby -e \"hosts = File.read('/etc/hosts').sub(/^::1 *localhost.*$/, ''); File.write('/etc/hosts', hosts)\"",
           "cat /etc/hosts"
         ]
